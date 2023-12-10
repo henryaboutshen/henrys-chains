@@ -40,24 +40,28 @@ const edgesBuilder = (edges) => {
     return res;
 };
 
-export async function GET() {
+export async function GET(request) {
+    const { searchParams } = new URL(request.url);
+    const repo = searchParams.get('repo');
+    console.log(repo)
+
     let res = {};
     let nodes = [];
     let links = [];
     let hotspot = [];
 
     // hotspot
-    const hotspotData = fs.readFileSync('./data/henry-grpc-hotspot.txt', { encoding: 'utf8', flag: 'r' });
+    const hotspotData = fs.readFileSync(`./data/${repo}-hotspot.txt`, { encoding: 'utf8', flag: 'r' });
     hotspot = hotspotData.split('\n');
     // console.log(hotspot);
 
     // nodes
-    const nodesData = fs.readFileSync('./data/henry-grpc-nodes.txt', { encoding: 'utf8', flag: 'r' });
+    const nodesData = fs.readFileSync(`./data/${repo}-nodes.txt`, { encoding: 'utf8', flag: 'r' });
     nodes = nodesBuilder(nodesData.split('\n'), hotspot);
     // console.log(nodes);
 
     // edges
-    const edgesData = fs.readFileSync('./data/henry-grpc-edges.txt', { encoding: 'utf8', flag: 'r' });
+    const edgesData = fs.readFileSync(`./data/${repo}-edges.txt`, { encoding: 'utf8', flag: 'r' });
     links = edgesBuilder(edgesData.split('\n'), nodes);
     // console.log(edges);
 

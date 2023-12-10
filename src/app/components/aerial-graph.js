@@ -18,8 +18,8 @@ export default function AerialGraph(props) {
         );
     }, [fgRef]);
 
-    const handleRightClick = () => {
-        window.location.href = '/repo'
+    const handleRightClick = (node) => {
+        window.location.href = `/repo/${node.id}`
     };
 
     React.useEffect(() => {
