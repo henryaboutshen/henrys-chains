@@ -1,0 +1,4 @@
+(*google.golang.org/protobuf/internal/impl.messageState).StoreMessageInfo
+(google.golang.org/protobuf/internal/impl.Export).MessageStateOf
+henry_grpc/proto.file_proto_henry_grpc_proto_rawDescGZIP
+henry_grpc/proto.init

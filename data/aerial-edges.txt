@@ -1,0 +1,7 @@
+henry_grpc github.com/golang/protobuf@v1.5.3
+henry_grpc golang.org/x/net@v0.9.0
+henry_grpc golang.org/x/sys@v0.7.0
+henry_grpc golang.org/x/text@v0.9.0
+henry_grpc google.golang.org/genproto@v0.0.0-20230410155749-daa745c078e1
+henry_grpc google.golang.org/grpc@v1.56.0
+henry_grpc google.golang.org/protobuf@v1.30.0
